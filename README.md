@@ -1,45 +1,49 @@
 # Code IDE Test
 
-A practical, dependency-light project for testing what a mobile code editor can actually do.
+A practical, dependency-light project for testing what a mobile code editor can do. The repository is designed to be opened and worked on inside **Kodo** (or another IDE). It focuses on real editing, build, preview, AI-assistance, and Git workflows—not a timed benchmark or leaderboard.
 
-This repository is designed to be opened and worked on inside **Kodo** (or another IDE). It is not a benchmark leaderboard: each folder is a small, real project that exercises a different part of the development workflow.
+## What's included
 
-## What to try
-
-| Area | Folder | What it tests |
+| Area | Files | What it tests |
 |---|---|---|
-| C++20 | `cpp/` | CMake configure/build, compiler standard support, STL, exceptions, program execution |
-| Web | `web/` | HTML/CSS/JavaScript editing, browser preview, DOM interaction, responsive layout |
-| Python | `python/` | Python editing, running scripts, standard-library unit tests |
-| Data | `data/` | JSON syntax highlighting, formatting, and structured data editing |
-| Editor workflow | `docs/EDITOR-TASKS.md` | Find/replace, multi-file edits, navigation, AI assistance, Git |
+| C++20 | `cpp/` | CMake, compiler support for concepts/ranges/`std::span`, exceptions, executable arguments, and a small test executable |
+| Web | `web/` | HTML/CSS/JavaScript editing, live preview, DOM events, task creation/completion/filtering/deletion, responsive layout |
+| Python | `python/` | Running a script, standard-library JSON output, platform information, functions, and error handling |
+| IDE workflow | `tasks/TEST-PLAN.md` | Navigation, search, AI assistance, Git, and recording compatibility issues |
 
-Everything here uses standard tools and avoids third-party package requirements.
+There are no third-party package dependencies or credentials.
 
-## Suggested test order
+## Quick start
 
-1. Open the repository in Kodo and browse the folders.
-2. Open `web/index.html` in Kodo's preview. Try the counter and theme controls.
-3. Run the Python program, then run its unit tests.
-4. Configure and build the C++ project with CMake. Run the resulting executable.
-5. Work through the editor tasks in `docs/EDITOR-TASKS.md`.
-6. Make a small change, inspect the diff, and commit it with Git.
+1. Open or clone the repository in Kodo.
+2. Open `web/index.html` in the browser preview. Add, complete, filter, and delete tasks; then toggle the theme.
+3. Run `python/main.py`.
+4. Configure and build the C++ project with CMake, then run both executables.
+5. Work through `tasks/TEST-PLAN.md` and record what works, what fails, and the exact error messages.
 
-## C++20 build
+## C++20
 
-From the repository root, use a terminal that supports CMake:
+From a terminal with CMake available:
 
 ```sh
 cmake -S cpp -B cpp/build
 cmake --build cpp/build
+ctest --test-dir cpp/build --output-on-failure
 ```
 
-Run the executable:
+Run the main program:
 
 - macOS / Linux: `./cpp/build/ide_test`
 - Windows: `cpp\build\Debug\ide_test.exe` (Visual Studio generator) or `cpp\build\ide_test.exe` (single-configuration generator)
 
-The project requests C++20 and enables exception handling for common compiler families. If your editor's compiler environment does not support a feature, record the exact compiler output rather than silently changing the test.
+Try its arguments:
+
+```sh
+./cpp/build/ide_test --help
+./cpp/build/ide_test --self-test
+```
+
+The CMake project requests C++20 and enables exception handling for Clang/GCC. If the editor's compiler environment rejects a feature, record the exact output rather than silently changing the test.
 
 ## Python
 
@@ -48,13 +52,10 @@ python3 python/main.py
 python3 -m unittest discover -s python -p "test_*.py" -v
 ```
 
-On Windows, use `python` instead of `python3` if that is the installed command.
+On Windows, use `python` instead of `python3` if needed.
 
-## Notes
+## Testing philosophy
 
-- No API keys, credentials, or private data are needed.
-- Build output is kept out of version control.
-- The projects are intentionally small so failures are easier to isolate.
-- A successful test in one environment does not guarantee support in every Kodo runtime or compiler configuration.
+A failed test is useful information. Record the action, exact error, and whether the problem appears to come from the editor, its terminal, its compiler/runtime, or the source code. A successful test in one environment does not guarantee support in every Kodo configuration.
 
 Have fun putting your editor through its paces.
