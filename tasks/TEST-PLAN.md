@@ -33,6 +33,7 @@ Small edit challenge: add a character counter showing the number of tasks.
 
 ## 4. Python
 - [ ] Run `python/main.py`.
+- [ ] Run the unit tests with `python3 -m unittest discover -s python -p "test_*.py" -v`.
 - [ ] Confirm the Python version is printed.
 - [ ] Change the sample values and rerun.
 - [ ] Try an empty list with `calculate_statistics([])` and inspect the error.
