@@ -1,0 +1,2 @@
+:root { color-scheme: dark light; --accent: #58a6ff; }
+.sample-card { display: grid; gap: 0.75rem; border: 1px solid var(--accent); border-radius: 0.75rem; padding: 1rem; }
