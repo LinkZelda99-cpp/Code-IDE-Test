@@ -1,0 +1,6 @@
+{
+  description = "Code IDE Test Nix sample";
+  outputs = { self }: {
+    packages.x86_64-linux.default = null;
+  };
+}
