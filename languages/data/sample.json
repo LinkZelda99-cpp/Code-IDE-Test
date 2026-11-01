@@ -1,0 +1,6 @@
+{
+  "project": "Code IDE Test",
+  "active": true,
+  "sampleCount": 3,
+  "languages": ["C++", "Python", "TypeScript"]
+}
