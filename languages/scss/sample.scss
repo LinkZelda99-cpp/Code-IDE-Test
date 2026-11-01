@@ -1,0 +1,6 @@
+$accent: #58a6ff;
+.card {
+  border: 1px solid $accent;
+  padding: 1rem;
+  &:hover { transform: translateY(-2px); }
+}
