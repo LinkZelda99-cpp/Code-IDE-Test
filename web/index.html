@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A small interactive web preview test for Code IDE Test.">
+    <title>Code IDE Test — Web Preview</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">CODE IDE TEST</p>
+          <h1>Web Preview</h1>
+          <p class="subtitle">A tiny app to test editing, preview, and JavaScript interaction.</p>
+        </div>
+        <button id="theme-toggle" class="secondary-button" type="button">Toggle theme</button>
+      </header>
+      <section class="panel" aria-labelledby="list-heading">
+        <div class="section-heading">
+          <div><p class="eyebrow">INTERACTION TEST</p><h2 id="list-heading">Task list</h2></div>
+          <span id="task-count" class="count">0 tasks</span>
+        </div>
+        <form id="task-form" class="task-form">
+          <label class="visually-hidden" for="task-input">New task</label>
+          <input id="task-input" name="task" maxlength="80" placeholder="Add a test task…" required>
+          <button type="submit">Add task</button>
+        </form>
+        <div class="filters" aria-label="Filter tasks">
+          <button class="filter-button active" data-filter="all" type="button">All</button>
+          <button class="filter-button" data-filter="open" type="button">Open</button>
+          <button class="filter-button" data-filter="done" type="button">Completed</button>
+        </div>
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
+        <p id="empty-state" class="empty-state">No tasks yet. Add one above.</p>
+      </section>
+      <footer>
+        <span>HTML + CSS + vanilla JavaScript</span>
+        <span id="clock">Waiting for JavaScript…</span>
+      </footer>
+    </main>
+  </body>
+</html>
