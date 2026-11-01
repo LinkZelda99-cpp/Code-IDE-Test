@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Code IDE Test">
+  <description>Markup and XML highlighting sample</description>
+  <language>Hello from XML</language>
+</project>
