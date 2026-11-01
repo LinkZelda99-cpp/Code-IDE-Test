@@ -1,0 +1,9 @@
+project: Code IDE Test
+purpose: syntax-highlighting-and-editor-testing
+languages:
+  - C++
+  - Python
+  - TypeScript
+settings:
+  enabled: true
+  sample_count: 3
