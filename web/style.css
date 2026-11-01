@@ -1,0 +1,112 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+* { box-sizing: border-box; }
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 48px 20px;
+  background: radial-gradient(circle at top left, #17263b 0, #0d1117 48%);
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+.app-shell { width: min(100%, 760px); margin: 0 auto; }
+.topbar, .section-heading, footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.topbar { margin-bottom: 32px; }
+.eyebrow {
+  margin: 0 0 8px;
+  color: #58a6ff;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 8px; font-size: clamp(2rem, 7vw, 3.4rem); letter-spacing: -.06em; }
+h2 { margin-bottom: 0; font-size: 1.35rem; }
+.subtitle, .empty-state, footer { color: #8b949e; }
+.subtitle { margin-bottom: 0; line-height: 1.6; }
+.panel {
+  padding: 28px;
+  border: 1px solid #30363d;
+  border-radius: 18px;
+  background: rgb(22 27 34 / 92%);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 24%);
+}
+.count { color: #8b949e; font-size: .9rem; }
+.task-form { display: flex; gap: 10px; margin: 24px 0 18px; }
+input {
+  min-width: 0;
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  outline: none;
+  background: #0d1117;
+  color: #e6edf3;
+}
+input:focus { border-color: #58a6ff; box-shadow: 0 0 0 3px rgb(88 166 255 / 15%); }
+button {
+  padding: 11px 15px;
+  border: 1px solid #388bfd;
+  border-radius: 10px;
+  background: #1f6feb;
+  color: white;
+  font-weight: 650;
+}
+button:hover { filter: brightness(1.12); }
+.secondary-button, .filter-button { border-color: #30363d; background: #21262d; }
+.filters { display: flex; gap: 8px; margin-bottom: 18px; }
+.filter-button { padding: 8px 12px; color: #c9d1d9; font-size: .88rem; }
+.filter-button.active { border-color: #388bfd; color: #58a6ff; }
+.task-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  background: #0d1117;
+}
+.task-item span { flex: 1; overflow-wrap: anywhere; }
+.task-item.completed span { color: #8b949e; text-decoration: line-through; }
+.task-item input { width: 18px; height: 18px; flex: 0 0 auto; accent-color: #238636; }
+.delete-button { padding: 6px 9px; border-color: #6e3038; background: #3d1f25; font-size: .8rem; }
+.empty-state { margin: 20px 0 0; text-align: center; }
+footer { margin-top: 18px; font-size: .8rem; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+body.light { color-scheme: light; background: #f6f8fa; color: #1f2328; }
+body.light .panel { border-color: #d0d7de; background: #fff; }
+body.light input, body.light .task-item {
+  border-color: #d0d7de; background: #f6f8fa; color: #1f2328;
+}
+body.light .secondary-button, body.light .filter-button {
+  border-color: #d0d7de; background: #f6f8fa; color: #1f2328;
+}
+body.light .subtitle, body.light .empty-state, body.light footer, body.light .count { color: #656d76; }
+@media (max-width: 560px) {
+  body { padding: 28px 14px; }
+  .topbar { align-items: flex-start; flex-direction: column; }
+  .panel { padding: 20px; }
+  .task-form { flex-direction: column; }
+  .task-form button { width: 100%; }
+  footer { align-items: flex-start; flex-direction: column; gap: 6px; }
+}
