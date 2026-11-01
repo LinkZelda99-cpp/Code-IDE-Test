@@ -6,6 +6,7 @@
 #include <numeric>
 #include <ranges>
 #include <span>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
