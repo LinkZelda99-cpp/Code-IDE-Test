@@ -1,0 +1,6 @@
+syntax = "proto3";
+package codetest;
+message Entry {
+  string label = 1;
+  int32 value = 2;
+}
