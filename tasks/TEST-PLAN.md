@@ -39,7 +39,29 @@ Small edit challenge: add a character counter showing the number of tasks.
 - [ ] Try an empty list with `calculate_statistics([])` and inspect the error.
 - [ ] Ask the IDE's AI to explain the function without rewriting it.
 
-## 5. AI coding assistance
+
+
+## 5. Language and syntax-highlighting sweep
+
+The `languages/` directory is a syntax-highlighting and editing gallery. It is deliberately not a claim that every language has a working compiler/runtime inside Kodo.
+
+- [ ] Open at least 15 files with different extensions.
+- [ ] Check whether each file gets the correct language mode automatically.
+- [ ] Check syntax colors for keywords, strings, comments, numbers, and types.
+- [ ] Test indentation and auto-closing brackets/quotes.
+- [ ] Test code folding and minimap/outline if available.
+- [ ] Test autocomplete in several languages.
+- [ ] Test find/replace across a multi-file project.
+- [ ] Check whether JSX/TSX, Vue, and Svelte are recognized distinctly.
+- [ ] Check whether shader files, SQL, YAML, TOML, and Markdown are highlighted correctly.
+- [ ] Record extensions that are missing, misidentified, or treated as plain text.
+
+Suggested quick sample set: `languages/c/hello.c`, `languages/rust/main.rs`, `languages/swift/main.swift`, `languages/go/main.go`, `languages/typescript/main.ts`, `languages/web/sample.tsx`, `languages/gdscript/main.gd`, `languages/glsl/shader.frag`, `languages/sql/query.sql`, `languages/data/sample.yaml`, `languages/terraform/main.tf`, and `languages/markdown/sample.md`.
+
+For each file, distinguish **syntax highlighting** from **language services** (autocomplete, diagnostics, formatting, navigation) and from **execution/build support**. These are separate capabilities.
+
+## 6. AI coding assistance
+
 Try these prompts one at a time. Review suggested changes before accepting them.
 
 1. "Explain how the C++20 ranges pipeline works. Do not modify the code."
