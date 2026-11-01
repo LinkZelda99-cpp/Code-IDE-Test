@@ -1,0 +1,8 @@
+title = "Code IDE Test"
+active = true
+sample_count = 3
+languages = ["C++", "Python", "TypeScript"]
+
+[editor]
+theme = "dark"
+word_wrap = true
